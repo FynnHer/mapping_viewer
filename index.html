@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapping & 3D Viewer</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <div id="app">
+        <header class="header">
+            <h1>🌍 FEW Herxheim - Mapping Viewer</h1>
+            <div class="view-toggle">
+                <button id="mapViewBtn" class="active">2D Map</button>
+                <button id="threeDViewBtn">3D Model</button>
+            </div>
+        </header>
+
+        <!-- 2D Map View -->
+        <div id="mapView" class="view-container active">
+            <div class="map-controls">
+                <div class="layer-panel">
+                    <h3>Layers</h3>
+                    <div class="layer-item">
+                        <label>
+                            <input type="checkbox" id="orthophotoLayer" checked>
+                            📷 Orthophoto
+                        </label>
+                        <input type="range" id="orthophotoOpacity" min="0" max="100" value="100" class="opacity-slider">
+                    </div>
+                    <div class="layer-item">
+                        <label>
+                            <input type="checkbox" id="demLayer">
+                            🏔️ Surface Model
+                        </label>
+                        <input type="range" id="demOpacity" min="0" max="100" value="70" class="opacity-slider">
+                    </div>
+                    <div class="layer-item">
+                        <label>
+                            <input type="checkbox" id="vectorLayer">
+                            📍 Vector Data
+                        </label>
+                        <input type="range" id="vectorOpacity" min="0" max="100" value="80" class="opacity-slider">
+                    </div>
+                </div>
+                <div class="coordinates-display">
+                    <span id="coordinates">Lat: -, Lng: -</span>
+                </div>
+            </div>
+            <div id="map"></div>
+        </div>
+
+        <!-- 3D Model View -->
+        <div id="threeDView" class="view-container">
+            <div class="sidebar">
+                <div class="panel">
+                    <h3>📷 Cameras</h3>
+                    <select id="cameraSelect">
+                        <option value="default">Default View</option>
+                    </select>
+                </div>
+                
+                <div class="panel">
+                    <h3>🎨 Textured Model</h3>
+                    <label>
+                        <input type="checkbox" id="showTextures" checked>
+                        Show Textures
+                    </label>
+                </div>
+                
+                <div class="panel">
+                    <h3>✨ Appearance</h3>
+                    <label>
+                        Brightness: <input type="range" id="brightness" min="0" max="200" value="100">
+                    </label>
+                    <label>
+                        Contrast: <input type="range" id="contrast" min="0" max="200" value="100">
+                    </label>
+                </div>
+                
+                <div class="panel">
+                    <h3>🔧 Tools</h3>
+                    <div class="tool-section">
+                        <h4>📏 Measurement</h4>
+                        <div class="measurement-tools">
+                            <button class="tool-btn" data-tool="distance">📏 Distance</button>
+                            <button class="tool-btn" data-tool="area">📐 Area</button>
+                            <button class="tool-btn" data-tool="height">📊 Height</button>
+                        </div>
+                        <div class="measurement-controls">
+                            <button id="showLabels">Show Labels</button>
+                            <button id="hideLabels">Hide Labels</button>
+                        </div>
+                    </div>
+                    
+                    <div class="tool-section">
+                        <h4>✂️ Clipping</h4>
+                        <div class="clipping-controls">
+                            <label>Clip Task:</label>
+                            <div class="clip-methods">
+                                <button class="clip-btn active" data-method="highlight">Highlight</button>
+                                <button class="clip-btn" data-method="inside">Inside</button>
+                                <button class="clip-btn" data-method="outside">Outside</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="panel">
+                    <h3>🎮 Navigation</h3>
+                    <div class="nav-controls">
+                        <button id="resetView">🏠 Reset View</button>
+                        <button id="topView">⬆️ Top View</button>
+                        <button id="sideView">➡️ Side View</button>
+                    </div>
+                    <div class="projection-controls">
+                        <label>Camera Projection:</label>
+                        <select id="projectionMode">
+                            <option value="perspective">Perspective</option>
+                            <option value="orthographic">Orthographic</option>
+                        </select>
+                    </div>
+                    <label>
+                        Speed: <input type="range" id="navigationSpeed" min="1" max="200" value="118">
+                        <span id="speedValue">118.5</span>
+                    </label>
+                </div>
+            </div>
+            
+            <div id="threeDContainer">
+                <canvas id="threeDCanvas"></canvas>
+                <div class="loading-overlay" id="loadingOverlay">
+                    <div class="spinner"></div>
+                    <p>Loading 3D Model...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/three@0.158.0/build/three.min.js"></script>
+    <script src="https://unpkg.com/three@0.158.0/examples/js/loaders/GLTFLoader.js"></script>
+    <script src="https://unpkg.com/three@0.158.0/examples/js/loaders/OBJLoader.js"></script>
+    <script src="https://unpkg.com/three@0.158.0/examples/js/controls/OrbitControls.js"></script>
+    <script src="js/mapViewer.js"></script>
+    <script src="js/threeDViewer.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

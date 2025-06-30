@@ -1,0 +1,32 @@
+# GitHub Pages configuration
+title: Mapping & 3D Viewer
+description: Interactive visualization of geospatial data and 3D models
+baseurl: ""
+url: "https://FynnHer.github.io/mapping_viewer"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+theme: minima
+
+# Include and exclude files
+include:
+  - js/
+  - styles/
+  - odm_orthophoto/
+  - odm_georeferencing/
+  - odm_dem/
+  - odm_texturing/
+  - entwine_pointcloud/
+  - odm_report/
+  - "*.json"
+
+exclude:
+  - README.md
+  - LICENSE
+  - .gitignore
+
+# Plugin settings
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
