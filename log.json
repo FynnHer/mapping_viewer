@@ -1,0 +1,1424 @@
+{
+    "odmVersion": "3.5.5",
+    "memory": {
+        "total": 15994,
+        "available": 14264
+    },
+    "cpus": 10,
+    "images": 397,
+    "options": {
+        "3d_tiles": false,
+        "align": null,
+        "auto_boundary": true,
+        "auto_boundary_distance": 0,
+        "bg_removal": false,
+        "boundary": {},
+        "build_overviews": false,
+        "camera_lens": "auto",
+        "cameras": {},
+        "cog": true,
+        "copy_to": null,
+        "crop": 3,
+        "dem_decimation": 1,
+        "dem_euclidean_map": false,
+        "dem_gapfill_steps": 3,
+        "dem_resolution": 2.0,
+        "dsm": true,
+        "dtm": false,
+        "end_with": "odm_postprocess",
+        "fast_orthophoto": false,
+        "feature_quality": "high",
+        "feature_type": "dspsift",
+        "force_gps": false,
+        "gcp": null,
+        "geo": null,
+        "gltf": true,
+        "gps_accuracy": 3,
+        "ignore_gsd": false,
+        "matcher_neighbors": 0,
+        "matcher_order": 0,
+        "matcher_type": "flann",
+        "max_concurrency": 10,
+        "merge": "all",
+        "mesh_octree_depth": 11,
+        "mesh_size": 200000,
+        "min_num_features": 10000,
+        "name": "afa41b35-76a5-4ac9-a887-08c69215fae4",
+        "no_gpu": false,
+        "optimize_disk_space": false,
+        "orthophoto_compression": "DEFLATE",
+        "orthophoto_cutline": false,
+        "orthophoto_kmz": false,
+        "orthophoto_no_tiled": false,
+        "orthophoto_png": false,
+        "orthophoto_resolution": 2.0,
+        "pc_classify": false,
+        "pc_copc": false,
+        "pc_csv": false,
+        "pc_ept": true,
+        "pc_filter": 5,
+        "pc_las": false,
+        "pc_quality": "high",
+        "pc_rectify": false,
+        "pc_sample": 0,
+        "pc_skip_geometric": false,
+        "primary_band": "auto",
+        "project_path": "/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4",
+        "radiometric_calibration": "none",
+        "rerun": null,
+        "rerun_all": false,
+        "rerun_from": [
+            "odm_postprocess"
+        ],
+        "rolling_shutter": false,
+        "rolling_shutter_readout": 0,
+        "sfm_algorithm": "incremental",
+        "sfm_no_partial": false,
+        "skip_3dmodel": false,
+        "skip_band_alignment": false,
+        "skip_orthophoto": false,
+        "skip_report": false,
+        "sky_removal": false,
+        "sm_cluster": null,
+        "sm_no_align": false,
+        "smrf_scalar": 1.25,
+        "smrf_slope": 0.15,
+        "smrf_threshold": 0.5,
+        "smrf_window": 18.0,
+        "split": 999999,
+        "split_image_groups": null,
+        "split_overlap": 150,
+        "texturing_keep_unseen_faces": false,
+        "texturing_single_material": false,
+        "texturing_skip_global_seam_leveling": false,
+        "tiles": false,
+        "use_3dmesh": false,
+        "use_exif": false,
+        "use_fixed_camera_params": false,
+        "use_hybrid_bundle_adjustment": false,
+        "video_limit": 500,
+        "video_resolution": 4000
+    },
+    "startTime": "2025-06-29T17:55:03.207633",
+    "stages": [
+        {
+            "name": "dataset",
+            "startTime": "2025-06-29T17:55:05.638859",
+            "messages": [
+                {
+                    "message": "Running dataset stage",
+                    "type": "info"
+                },
+                {
+                    "message": "Loading dataset from: /var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/images",
+                    "type": "info"
+                },
+                {
+                    "message": "Loading images database: /var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/images.json",
+                    "type": "info"
+                },
+                {
+                    "message": "Found 397 usable images",
+                    "type": "info"
+                },
+                {
+                    "message": "Coordinates file already exist: /var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_georeferencing/coords.txt",
+                    "type": "info"
+                },
+                {
+                    "message": "Model geo file already exist: /var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_georeferencing/odm_georeferencing_model_geo.txt",
+                    "type": "info"
+                },
+                {
+                    "message": "Finished dataset stage",
+                    "type": "info"
+                }
+            ]
+        },
+        {
+            "name": "split",
+            "startTime": "2025-06-29T17:55:05.647473",
+            "messages": [
+                {
+                    "message": "Running split stage",
+                    "type": "info"
+                },
+                {
+                    "message": "Normal dataset, will process all at once.",
+                    "type": "info"
+                },
+                {
+                    "message": "Finished split stage",
+                    "type": "info"
+                }
+            ]
+        },
+        {
+            "name": "merge",
+            "startTime": "2025-06-29T17:55:05.647553",
+            "messages": [
+                {
+                    "message": "Running merge stage",
+                    "type": "info"
+                },
+                {
+                    "message": "Normal dataset, nothing to merge.",
+                    "type": "info"
+                },
+                {
+                    "message": "Finished merge stage",
+                    "type": "info"
+                }
+            ]
+        },
+        {
+            "name": "opensfm",
+            "startTime": "2025-06-29T17:55:05.647594",
+            "messages": [
+                {
+                    "message": "Running opensfm stage",
+                    "type": "info"
+                },
+                {
+                    "message": "/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/opensfm/image_list.txt already exists, not rerunning OpenSfM setup",
+                    "type": "warning"
+                },
+                {
+                    "message": "/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/opensfm/exif already exists, not rerunning photo to metadata",
+                    "type": "warning"
+                },
+                {
+                    "message": "Detect features already done: /var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/opensfm/features exists",
+                    "type": "warning"
+                },
+                {
+                    "message": "Match features already done: /var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/opensfm/matches exists",
+                    "type": "warning"
+                },
+                {
+                    "message": "Found a valid OpenSfM tracks file in: /var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/opensfm/tracks.csv",
+                    "type": "warning"
+                },
+                {
+                    "message": "Found a valid OpenSfM reconstruction file in: /var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/opensfm/reconstruction.json",
+                    "type": "warning"
+                },
+                {
+                    "message": "Already extracted cameras",
+                    "type": "info"
+                },
+                {
+                    "message": "Export reconstruction stats",
+                    "type": "info"
+                },
+                {
+                    "message": "Found existing reconstruction stats /var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/opensfm/stats/stats.json",
+                    "type": "warning"
+                },
+                {
+                    "message": "Will skip exporting /var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/opensfm/reconstruction.geocoords.json",
+                    "type": "warning"
+                },
+                {
+                    "message": "Undistorting /var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/opensfm ...",
+                    "type": "info"
+                },
+                {
+                    "message": "Already undistorted (nominal)",
+                    "type": "warning"
+                },
+                {
+                    "message": "Found a valid OpenSfM NVM reconstruction file in: /var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/opensfm/undistorted/reconstruction.nvm",
+                    "type": "warning"
+                },
+                {
+                    "message": "Finished opensfm stage",
+                    "type": "info"
+                }
+            ]
+        },
+        {
+            "name": "openmvs",
+            "startTime": "2025-06-29T17:55:06.026009",
+            "messages": [
+                {
+                    "message": "Running openmvs stage",
+                    "type": "info"
+                },
+                {
+                    "message": "Found existing /var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/opensfm/undistorted/openmvs/scene.mvs",
+                    "type": "warning"
+                },
+                {
+                    "message": "Depthmap resolution set to: 1024px",
+                    "type": "info"
+                },
+                {
+                    "message": "Running dense reconstruction. This might take a while.",
+                    "type": "info"
+                },
+                {
+                    "message": "Estimating depthmaps",
+                    "type": "info"
+                },
+                {
+                    "message": "running \"/code/SuperBuild/install/bin/OpenMVS/DensifyPointCloud\" \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/opensfm/undistorted/openmvs/scene.mvs\" --resolution-level 1 --dense-config-file \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/opensfm/undistorted/openmvs/Densify.ini\" --max-resolution 2048 --min-resolution 640 --max-threads 10 --number-views-fuse 2 --sub-resolution-levels 2 --archive-type 3 -w \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/opensfm/undistorted/openmvs/depthmaps\" -v 0 --cuda-device -2",
+                    "type": "info"
+                },
+                {
+                    "message": "running \"/code/SuperBuild/install/bin/OpenMVS/DensifyPointCloud\" --filter-point-cloud -20 -i \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/opensfm/undistorted/openmvs/scene_dense.mvs\" -v 0 --cuda-device -2",
+                    "type": "info"
+                },
+                {
+                    "message": "Finished openmvs stage",
+                    "type": "info"
+                }
+            ]
+        },
+        {
+            "name": "odm_filterpoints",
+            "startTime": "2025-06-29T18:14:56.032583",
+            "messages": [
+                {
+                    "message": "Running odm_filterpoints stage",
+                    "type": "info"
+                },
+                {
+                    "message": "Filtering /var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/opensfm/undistorted/openmvs/scene_dense_dense_filtered.ply (statistical, meanK 16, standard deviation 5)",
+                    "type": "info"
+                },
+                {
+                    "message": "Boundary [(-1.0827850934001617, -227.0220887856558), (-9.743799935036805, -227.95709385629743), (-18.44251418701606, -228.4259039806202), (-27.15385225712089, -228.4271677294746), (-35.85270216304343, -227.96088146045804), (-44.51398792152759, -227.02838932722807), (-47.932287667295896, -226.56723638996482), (-55.85353143559769, -225.29848560970277), (-63.702380913775414, -223.63975318707526), (-84.55746120639378, -218.69076258130372), (-93.34034640848404, -216.34480212070048), (-103.52211636659922, -213.3171763252467), (-111.54090368835023, -210.7040482768789), (-119.41307290759869, -207.6777733238414), (-127.11735390726244, -204.24652827437967), (-134.6329301938531, -200.4195841429755), (-141.93949514249107, -196.2072810959071), (-149.0173068640288, -191.6210005171597), (-155.84724154649302, -186.6731342561543), (-162.41084512631642, -181.37705114111304), (-168.69038315035868, -175.7470608651638), (-174.66888869303511, -169.79837531410158), (-180.33020820003003, -163.54706747084856), (-185.65904513420537, -157.01002798508853), (-190.64100130583392, -150.2049195356667), (-195.2626157758641, -143.15012910589576), (-199.51140122604556, -135.864718307741), (-203.3758776995237, -128.36837187130004), (-206.8456036184798, -120.68134446348995), (-209.91120399686042, -112.82440596166998), (-212.56439577095443, -104.81878532841802), (-214.79801017977297, -96.68611325975507), (-216.60601213452173, -88.44836373440921), (-218.0364959181752, -81.01268359646201), (-219.63439608359477, -71.04415007866919), (-220.6092275652918, -60.99553579464555), (-221.7881216443493, -43.04823745507747), (-222.01269042986678, -38.76418227702379), (-222.87861791608157, -16.65800602827221), (-223.00279911147663, -10.083945258520544), (-222.99592583917547, -5.09110155981034), (-222.76586664351635, 3.3256479082629085), (-222.09948285017163, 11.719129395671189), (-220.99856904381886, 20.06673909071833), (-219.46609000716126, 28.345996716991067), (-217.50617273634998, 36.53460607025772), (-215.12409532739548, 44.61051506269723), (-206.1232673052582, 72.44301855191588), (-203.21680835541338, 80.66825354564935), (-199.87246874556877, 88.72538621909916), (-196.0999163899105, 96.5911247767508), (-191.91005709284218, 104.24273071344942), (-187.315003021562, 111.65808454249054), (-185.5006380804698, 114.41750024724752), (-180.6587287693983, 121.37815285939723), (-175.45979794295272, 128.07635327614844), (-169.91804394632345, 134.49380862899125), (-156.40597804583376, 149.33851820975542), (-152.3236740352586, 153.66159055009484), (-136.09286566573428, 170.23065687622875), (-131.68541840463877, 174.56180260982364), (-123.16407323646126, 182.6224626582116), (-117.57493614312261, 187.6688979845494), (-111.75767002347857, 192.4505690149963), (-108.51234352443134, 194.99429576285183), (-100.00560876185773, 201.2265569269657), (-91.11199272773229, 206.89305579010397), (-86.898688962101, 209.38883335888386), (-79.03465033817338, 213.75729042477906), (-44.36266806314234, 231.77832459378988), (-35.60695353150368, 236.00099562946707), (-26.614077799080405, 239.69175079651177), (-22.98327607905958, 241.0562673052773), (-14.998387580330018, 243.8220418151468), (-6.880330835992936, 246.1683384012431), (1.3488737615989521, 248.08879268728197), (9.666904329380486, 249.57819540333003), (18.05119804199785, 250.6325065130368), (26.4790123339626, 251.24886617716402), (34.927486589411274, 251.4256025077775), (43.3737041518325, 251.1622361028567), (51.79475448618177, 250.45948135107756), (60.16779532388318, 249.3192444872111), (68.47011462308001, 247.7446184270084), (76.67919217568124, 245.73987437505275), (84.77276069350773, 243.31045024190098), (92.7288662091014, 240.46293588727713), (100.52592762606218, 237.20505525171757), (108.14279525837628, 233.5456454018131), (115.55880819936283, 229.49463256075978), (122.75385036453372, 225.06300518289208), (129.70840505725937, 220.26278414670378), (136.40360790799605, 215.10699014738202), (142.8212980441749, 209.60960838012397), (148.94406735216035, 203.78555060457438), (154.75530769699253, 197.65061469376087), (160.2392559722066, 191.2214417848736), (165.38103685778333, 184.51547113899142), (170.16670316958334, 177.5508928373456), (174.58327369141625, 170.34659843705595), (178.61876838677563, 162.92212973255664), (182.26224089512834, 155.29762574564666), (185.50380822399165, 147.49376809503883), (188.33467755670426, 139.53172490280122), (190.74717010330642, 131.43309337086976), (193.02484906854806, 122.98929999675602), (195.82238090474857, 110.75447524059564), (196.72394766513025, 105.96607554052025), (197.01899424329167, 104.35430908575654), (219.01251873676665, -19.313193906098604), (220.33591376978438, -28.164068489335477), (221.1692937722546, -37.07444631867111), (221.51012335711857, -46.01721940655261), (221.56296550214756, -51.04394093155861), (221.4299603125546, -59.53541875816882), (220.85282920708414, -68.00830526370555), (219.83315333904466, -76.43938747048378), (218.3737262916984, -84.80556693021208), (216.47854642482707, -93.08392300643027), (214.15280592057388, -101.25177567172796), (211.40287655848078, -109.28674764093012), (208.23629225877812, -117.16682568192482), (204.6617284420645, -124.87042091879994), (200.68897826131433, -132.37642798386514), (196.32892577175517, -139.66428283508867), (191.59351611224702, -146.71401910111308), (186.49572277924744, -153.50632277410477), (181.0495120837586, -160.02258513122797), (175.26980488805566, -166.24495371524245), (169.17243572731968, -172.15638123918325), (162.77410942822462, -177.74067229684442), (156.0923553429311, -182.9825277319178), (149.1454793245066, -187.86758654844016), (141.95251357462257, -192.38246525917202), (134.53316450142302, -196.5147945517674), (126.9077587306383, -200.25325317587703), (119.09718741668621, -203.58759895991534), (111.12284900824307, -206.50869686994702), (104.81870884116506, -208.6325707109645), (98.47904746135464, -210.6248095165938), (91.41204413707601, -212.6875856341794), (83.59137551835738, -214.76020981092006), (75.67711058235727, -216.44040002208203), (67.68892836739542, -217.72397842817008), (-1.0827850934001617, -227.0220887856558)]",
+                    "type": "info"
+                },
+                {
+                    "message": "running \"/code/SuperBuild/install/bin/FPCFilter\" --input \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/opensfm/undistorted/openmvs/scene_dense_dense_filtered.ply\" --output \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_filterpoints/point_cloud.ply\" --concurrency 10 --meank 16 --std 5 --stats \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_filterpoints/point_cloud_stats.json\" --boundary \"/tmp/tmptvfeane1.boundary.json\"",
+                    "type": "info"
+                },
+                {
+                    "message": "Finished odm_filterpoints stage",
+                    "type": "info"
+                }
+            ]
+        },
+        {
+            "name": "odm_meshing",
+            "startTime": "2025-06-29T18:15:54.211469",
+            "messages": [
+                {
+                    "message": "Running odm_meshing stage",
+                    "type": "info"
+                },
+                {
+                    "message": "Writing ODM Mesh file in: /var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_meshing/odm_mesh.ply",
+                    "type": "info"
+                },
+                {
+                    "message": "running \"/code/SuperBuild/install/bin/PoissonRecon\" --in \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_filterpoints/point_cloud.ply\" --out \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_meshing/odm_mesh.dirty.ply\" --depth 11 --pointWeight 4.0 --samplesPerNode 1.0 --threads 9 --bType 2 --linearFit ",
+                    "type": "info"
+                },
+                {
+                    "message": "running \"/code/SuperBuild/install/bin/OpenMVS/ReconstructMesh\" -i \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_meshing/odm_mesh.dirty.ply\" -o \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_meshing/odm_mesh.ply\" --archive-type 3 --remove-spikes 0 --remove-spurious 20 --smooth 0 --target-face-num 400000 -v 0",
+                    "type": "info"
+                },
+                {
+                    "message": "Writing ODM 2.5D Mesh file in: /var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_meshing/odm_25dmesh.ply",
+                    "type": "info"
+                },
+                {
+                    "message": "ODM 2.5D DSM resolution: 0.02",
+                    "type": "info"
+                },
+                {
+                    "message": "Created temporary directory: /var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_meshing/tmp",
+                    "type": "info"
+                },
+                {
+                    "message": "Creating DSM for 2.5D mesh",
+                    "type": "info"
+                },
+                {
+                    "message": "running renderdem \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_filterpoints/point_cloud.ply\" --outdir \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_meshing/tmp\" --output-type max --radiuses 0.031415926535897934,0.04442882938158367,0.06283185307179588 --resolution 0.02 --max-tiles 0 --decimation 1 --classification -1 --tile-size 4096 --force ",
+                    "type": "info"
+                },
+                {
+                    "message": "Generated 18 tiles",
+                    "type": "info"
+                },
+                {
+                    "message": "running gdalbuildvrt -input_file_list \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_meshing/tmp/tiles_list.txt\" \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_meshing/tmp/tiles.vrt\" ",
+                    "type": "info"
+                },
+                {
+                    "message": "running gdal_translate -co NUM_THREADS=10 -co BIGTIFF=IF_SAFER -co COMPRESS=DEFLATE --config GDAL_CACHEMAX 44.0% -outsize 10% 0 \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_meshing/tmp/tiles.vrt\" \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_meshing/tmp/tiles.small.tif\"",
+                    "type": "info"
+                },
+                {
+                    "message": "running gdalbuildvrt -resolution highest -r bilinear \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_meshing/tmp/merged.vrt\" \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_meshing/tmp/tiles.small_filled.tif\" \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_meshing/tmp/tiles.vrt\"",
+                    "type": "info"
+                },
+                {
+                    "message": "running gdal_translate -co NUM_THREADS=10 -co TILED=YES -co BIGTIFF=IF_SAFER -co COMPRESS=DEFLATE --config GDAL_CACHEMAX 44.0% \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_meshing/tmp/merged.vrt\" \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_meshing/tmp/tiles.tif\"",
+                    "type": "info"
+                },
+                {
+                    "message": "running fastrasterfilter \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_meshing/tmp/tiles.tif\" --output \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_meshing/tmp/mesh_dsm.tif\" --window-size 512 --radius 4 --co TILED=YES --co BIGTIFF=IF_SAFER --co COMPRESS=DEFLATE ",
+                    "type": "info"
+                },
+                {
+                    "message": "Completed smoothing to create /var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_meshing/tmp/mesh_dsm.tif in 0:00:03.223209",
+                    "type": "info"
+                },
+                {
+                    "message": "Completed mesh_dsm.tif in 0:00:20.770737",
+                    "type": "info"
+                },
+                {
+                    "message": "Creating mesh from DSM: /var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_meshing/tmp/mesh_dsm.tif",
+                    "type": "info"
+                },
+                {
+                    "message": "running \"/code/SuperBuild/install/bin/dem2mesh\" -inputFile \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_meshing/tmp/mesh_dsm.tif\" -outputFile \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_meshing/odm_25dmesh.dirty.ply\" -maxTileLength 2000 -maxVertexCount 200000 -maxConcurrency 10 -edgeSwapThreshold 0.15 -verbose ",
+                    "type": "info"
+                },
+                {
+                    "message": "running \"/code/SuperBuild/install/bin/OpenMVS/ReconstructMesh\" -i \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_meshing/odm_25dmesh.dirty.ply\" -o \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_meshing/odm_25dmesh.ply\" --archive-type 3 --remove-spikes 0 --remove-spurious 0 --smooth 0 --target-face-num 400000 -v 0",
+                    "type": "info"
+                },
+                {
+                    "message": "Finished odm_meshing stage",
+                    "type": "info"
+                }
+            ]
+        },
+        {
+            "name": "mvs_texturing",
+            "startTime": "2025-06-29T18:20:04.197540",
+            "messages": [
+                {
+                    "message": "Running mvs_texturing stage",
+                    "type": "info"
+                },
+                {
+                    "message": "Writing MVS Textured file in: /var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_texturing/odm_textured_model_geo.obj",
+                    "type": "info"
+                },
+                {
+                    "message": "running \"/code/SuperBuild/install/bin/texrecon\" \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/opensfm/undistorted/reconstruction.nvm\" \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_meshing/odm_mesh.ply\" \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_texturing/odm_textured_model_geo\" -d gmi -o gauss_clamping -t none --no_intermediate_results     --max_texture_size=8192 ",
+                    "type": "info"
+                },
+                {
+                    "message": "Generating glTF Binary",
+                    "type": "info"
+                },
+                {
+                    "message": "Converting /var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_texturing/odm_textured_model_geo.obj --> /var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_texturing/odm_textured_model_geo.glb",
+                    "type": "info"
+                },
+                {
+                    "message": "Loading /var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_texturing/odm_textured_model_geo.obj",
+                    "type": "info"
+                },
+                {
+                    "message": "Loading odm_textured_model_geo_material0000_map_Kd.png",
+                    "type": "info"
+                },
+                {
+                    "message": "Loading odm_textured_model_geo_material0001_map_Kd.png",
+                    "type": "info"
+                },
+                {
+                    "message": "Loading odm_textured_model_geo_material0002_map_Kd.png",
+                    "type": "info"
+                },
+                {
+                    "message": "Loading odm_textured_model_geo_material0003_map_Kd.png",
+                    "type": "info"
+                },
+                {
+                    "message": "Loading odm_textured_model_geo_material0004_map_Kd.png",
+                    "type": "info"
+                },
+                {
+                    "message": "Loading odm_textured_model_geo_material0005_map_Kd.png",
+                    "type": "info"
+                },
+                {
+                    "message": "Loading odm_textured_model_geo_material0006_map_Kd.png",
+                    "type": "info"
+                },
+                {
+                    "message": "Loading odm_textured_model_geo_material0007_map_Kd.png",
+                    "type": "info"
+                },
+                {
+                    "message": "Loading odm_textured_model_geo_material0008_map_Kd.png",
+                    "type": "info"
+                },
+                {
+                    "message": "Loading odm_textured_model_geo_material0009_map_Kd.png",
+                    "type": "info"
+                },
+                {
+                    "message": "Loading odm_textured_model_geo_material0010_map_Kd.png",
+                    "type": "info"
+                },
+                {
+                    "message": "Loading odm_textured_model_geo_material0011_map_Kd.png",
+                    "type": "info"
+                },
+                {
+                    "message": "Loading odm_textured_model_geo_material0012_map_Kd.png",
+                    "type": "info"
+                },
+                {
+                    "message": "Loading odm_textured_model_geo_material0013_map_Kd.png",
+                    "type": "info"
+                },
+                {
+                    "message": "Loading odm_textured_model_geo_material0014_map_Kd.png",
+                    "type": "info"
+                },
+                {
+                    "message": "Loading odm_textured_model_geo_material0015_map_Kd.png",
+                    "type": "info"
+                },
+                {
+                    "message": "Loading odm_textured_model_geo_material0016_map_Kd.png",
+                    "type": "info"
+                },
+                {
+                    "message": "Loading odm_textured_model_geo_material0017_map_Kd.png",
+                    "type": "info"
+                },
+                {
+                    "message": "Loading odm_textured_model_geo_material0018_map_Kd.png",
+                    "type": "info"
+                },
+                {
+                    "message": "Loading odm_textured_model_geo_material0019_map_Kd.png",
+                    "type": "info"
+                },
+                {
+                    "message": "Loading odm_textured_model_geo_material0020_map_Kd.png",
+                    "type": "info"
+                },
+                {
+                    "message": "Loading odm_textured_model_geo_material0021_map_Kd.png",
+                    "type": "info"
+                },
+                {
+                    "message": "Loading odm_textured_model_geo_material0022_map_Kd.png",
+                    "type": "info"
+                },
+                {
+                    "message": "Loading odm_textured_model_geo_material0023_map_Kd.png",
+                    "type": "info"
+                },
+                {
+                    "message": "Loading odm_textured_model_geo_material0024_map_Kd.png",
+                    "type": "info"
+                },
+                {
+                    "message": "Loading odm_textured_model_geo_material0025_map_Kd.png",
+                    "type": "info"
+                },
+                {
+                    "message": "Loading odm_textured_model_geo_material0026_map_Kd.png",
+                    "type": "info"
+                },
+                {
+                    "message": "Loading odm_textured_model_geo_material0027_map_Kd.png",
+                    "type": "info"
+                },
+                {
+                    "message": "Loading odm_textured_model_geo_material0028_map_Kd.png",
+                    "type": "info"
+                },
+                {
+                    "message": "Loading odm_textured_model_geo_material0029_map_Kd.png",
+                    "type": "info"
+                },
+                {
+                    "message": "Loading odm_textured_model_geo_material0030_map_Kd.png",
+                    "type": "info"
+                },
+                {
+                    "message": "Loading odm_textured_model_geo_material0031_map_Kd.png",
+                    "type": "info"
+                },
+                {
+                    "message": "Loading odm_textured_model_geo_material0032_map_Kd.png",
+                    "type": "info"
+                },
+                {
+                    "message": "Loading odm_textured_model_geo_material0033_map_Kd.png",
+                    "type": "info"
+                },
+                {
+                    "message": "Loading odm_textured_model_geo_material0034_map_Kd.png",
+                    "type": "info"
+                },
+                {
+                    "message": "Loading odm_textured_model_geo_material0035_map_Kd.png",
+                    "type": "info"
+                },
+                {
+                    "message": "Loading odm_textured_model_geo_material0036_map_Kd.png",
+                    "type": "info"
+                },
+                {
+                    "message": "Loading odm_textured_model_geo_material0037_map_Kd.png",
+                    "type": "info"
+                },
+                {
+                    "message": "Loading odm_textured_model_geo_material0038_map_Kd.png",
+                    "type": "info"
+                },
+                {
+                    "message": "Loading odm_textured_model_geo_material0039_map_Kd.png",
+                    "type": "info"
+                },
+                {
+                    "message": "Loading odm_textured_model_geo_material0040_map_Kd.png",
+                    "type": "info"
+                },
+                {
+                    "message": "Loading odm_textured_model_geo_material0041_map_Kd.png",
+                    "type": "info"
+                },
+                {
+                    "message": "Loading odm_textured_model_geo_material0042_map_Kd.png",
+                    "type": "info"
+                },
+                {
+                    "message": "Loading odm_textured_model_geo_material0043_map_Kd.png",
+                    "type": "info"
+                },
+                {
+                    "message": "Loading odm_textured_model_geo_material0044_map_Kd.png",
+                    "type": "info"
+                },
+                {
+                    "message": "Loading odm_textured_model_geo_material0045_map_Kd.png",
+                    "type": "info"
+                },
+                {
+                    "message": "Loading odm_textured_model_geo_material0046_map_Kd.png",
+                    "type": "info"
+                },
+                {
+                    "message": "Loading odm_textured_model_geo_material0047_map_Kd.png",
+                    "type": "info"
+                },
+                {
+                    "message": "Loading odm_textured_model_geo_material0048_map_Kd.png",
+                    "type": "info"
+                },
+                {
+                    "message": "Loading odm_textured_model_geo_material0049_map_Kd.png",
+                    "type": "info"
+                },
+                {
+                    "message": "Loading odm_textured_model_geo_material0050_map_Kd.png",
+                    "type": "info"
+                },
+                {
+                    "message": "Loading odm_textured_model_geo_material0051_map_Kd.png",
+                    "type": "info"
+                },
+                {
+                    "message": "Loading odm_textured_model_geo_material0052_map_Kd.png",
+                    "type": "info"
+                },
+                {
+                    "message": "Loading odm_textured_model_geo_material0053_map_Kd.png",
+                    "type": "info"
+                },
+                {
+                    "message": "Loading odm_textured_model_geo_material0054_map_Kd.png",
+                    "type": "info"
+                },
+                {
+                    "message": "Loading odm_textured_model_geo_material0055_map_Kd.png",
+                    "type": "info"
+                },
+                {
+                    "message": "Loading odm_textured_model_geo_material0056_map_Kd.png",
+                    "type": "info"
+                },
+                {
+                    "message": "Loading odm_textured_model_geo_material0057_map_Kd.png",
+                    "type": "info"
+                },
+                {
+                    "message": "Loading odm_textured_model_geo_material0058_map_Kd.png",
+                    "type": "info"
+                },
+                {
+                    "message": "Loading odm_textured_model_geo_material0059_map_Kd.png",
+                    "type": "info"
+                },
+                {
+                    "message": "Loading odm_textured_model_geo_material0060_map_Kd.png",
+                    "type": "info"
+                },
+                {
+                    "message": "Loading odm_textured_model_geo_material0061_map_Kd.png",
+                    "type": "info"
+                },
+                {
+                    "message": "Loading odm_textured_model_geo_material0062_map_Kd.png",
+                    "type": "info"
+                },
+                {
+                    "message": "Loading odm_textured_model_geo_material0063_map_Kd.png",
+                    "type": "info"
+                },
+                {
+                    "message": "Loading odm_textured_model_geo_material0064_map_Kd.png",
+                    "type": "info"
+                },
+                {
+                    "message": "Loading odm_textured_model_geo_material0065_map_Kd.png",
+                    "type": "info"
+                },
+                {
+                    "message": "Loading odm_textured_model_geo_material0066_map_Kd.png",
+                    "type": "info"
+                },
+                {
+                    "message": "Writing...",
+                    "type": "info"
+                },
+                {
+                    "message": "Wrote /var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_texturing/odm_textured_model_geo.glb",
+                    "type": "info"
+                },
+                {
+                    "message": "Compressing with draco",
+                    "type": "info"
+                },
+                {
+                    "message": "running draco_transcoder -i \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_texturing/odm_textured_model_geo.glb\" -o \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_texturing/odm_textured_model_geo_compressed.glb\" -qt 16 -qp 16",
+                    "type": "info"
+                },
+                {
+                    "message": "Writing MVS Textured file in: /var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_texturing_25d/odm_textured_model_geo.obj",
+                    "type": "info"
+                },
+                {
+                    "message": "running \"/code/SuperBuild/install/bin/texrecon\" \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/opensfm/undistorted/reconstruction.nvm\" \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_meshing/odm_25dmesh.ply\" \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_texturing_25d/odm_textured_model_geo\" -d gmi -o gauss_clamping -t none --no_intermediate_results   --nadir_mode  --max_texture_size=8192 ",
+                    "type": "info"
+                },
+                {
+                    "message": "Finished mvs_texturing stage",
+                    "type": "info"
+                }
+            ]
+        },
+        {
+            "name": "odm_georeferencing",
+            "startTime": "2025-06-29T18:23:31.578103",
+            "messages": [
+                {
+                    "message": "Running odm_georeferencing stage",
+                    "type": "info"
+                },
+                {
+                    "message": "Georeferencing point cloud",
+                    "type": "info"
+                },
+                {
+                    "message": "las scale calculated as the minimum of 1/10 estimated spacing or 0.001, which ever is less.",
+                    "type": "info"
+                },
+                {
+                    "message": "running pdal translate -i \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_filterpoints/point_cloud.ply\" -o \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_georeferencing/odm_georeferenced_model.laz\" ferry transformation --filters.ferry.dimensions=\"views => UserData\" --filters.transformation.matrix=\"1 0 0 442710.0 0 1 0 5444300.0 0 0 1 0 0 0 0 1\" --writers.las.offset_x=442710.0 --writers.las.offset_y=5444300.0 --writers.las.scale_x=0.001 --writers.las.scale_y=0.001 --writers.las.scale_z=0.001 --writers.las.offset_z=0 --writers.las.a_srs=\"+proj=utm +zone=32 +datum=WGS84 +units=m +no_defs +type=crs\"",
+                    "type": "info"
+                },
+                {
+                    "message": "Calculating cropping area and generating bounds shapefile from point cloud",
+                    "type": "info"
+                },
+                {
+                    "message": "running pdal translate -i \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_georeferencing/odm_georeferenced_model.laz\" -o \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_georeferencing/odm_georeferenced_model.decimated.las\" decimation --filters.decimation.step=40 ",
+                    "type": "info"
+                },
+                {
+                    "message": "running pdal info --boundary --filters.hexbin.edge_size=1 --filters.hexbin.threshold=0 \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_georeferencing/odm_georeferenced_model.decimated.las\" > \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_georeferencing/odm_georeferenced_model.boundary.json\"",
+                    "type": "info"
+                },
+                {
+                    "message": "running pdal info --summary \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_georeferencing/odm_georeferenced_model.laz\" > \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_georeferencing/odm_georeferenced_model.summary.json\"",
+                    "type": "info"
+                },
+                {
+                    "message": "running ogr2ogr -overwrite -f GPKG -a_srs \"+proj=utm +zone=32 +datum=WGS84 +units=m +no_defs\" /var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_georeferencing/odm_georeferenced_model.bounds.gpkg /var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_georeferencing/odm_georeferenced_model.bounds.geojson",
+                    "type": "info"
+                },
+                {
+                    "message": "Creating Entwine Point Tile output",
+                    "type": "info"
+                },
+                {
+                    "message": "running entwine build --threads 10 --tmp \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/entwine_pointcloud-tmp\" -i /var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_georeferencing/odm_georeferenced_model.laz -o \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/entwine_pointcloud\" ",
+                    "type": "info"
+                },
+                {
+                    "message": "Finished odm_georeferencing stage",
+                    "type": "info"
+                }
+            ]
+        },
+        {
+            "name": "odm_dem",
+            "startTime": "2025-06-29T18:25:48.300031",
+            "messages": [
+                {
+                    "message": "Running odm_dem stage",
+                    "type": "info"
+                },
+                {
+                    "message": "Create DSM: True",
+                    "type": "info"
+                },
+                {
+                    "message": "Create DTM: False",
+                    "type": "info"
+                },
+                {
+                    "message": "DEM input file /var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_georeferencing/odm_georeferenced_model.laz found: True",
+                    "type": "info"
+                },
+                {
+                    "message": "running renderdem \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_georeferencing/odm_georeferenced_model.laz\" --outdir \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_dem\" --output-type max --radiuses 0.02,0.028284271247461905,0.04000000000000001 --resolution 0.02 --max-tiles 0 --decimation 1 --classification -1 --tile-size 4096 --force ",
+                    "type": "info"
+                },
+                {
+                    "message": "Generated 18 tiles",
+                    "type": "info"
+                },
+                {
+                    "message": "running gdalbuildvrt -input_file_list \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_dem/tiles_list.txt\" \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_dem/tiles.vrt\" ",
+                    "type": "info"
+                },
+                {
+                    "message": "running gdal_translate -co NUM_THREADS=10 -co BIGTIFF=IF_SAFER -co COMPRESS=DEFLATE --config GDAL_CACHEMAX 43.45% -outsize 10% 0 \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_dem/tiles.vrt\" \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_dem/tiles.small.tif\"",
+                    "type": "info"
+                },
+                {
+                    "message": "running gdalbuildvrt -resolution highest -r bilinear \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_dem/merged.vrt\" \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_dem/tiles.small_filled.tif\" \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_dem/tiles.vrt\"",
+                    "type": "info"
+                },
+                {
+                    "message": "running gdal_translate -co NUM_THREADS=10 -co TILED=YES -co BIGTIFF=IF_SAFER -co COMPRESS=DEFLATE --config GDAL_CACHEMAX 43.45% \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_dem/merged.vrt\" \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_dem/tiles.tif\"",
+                    "type": "info"
+                },
+                {
+                    "message": "running fastrasterfilter \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_dem/tiles.tif\" --output \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_dem/dsm.tif\" --window-size 512 --radius 4 --co TILED=YES --co BIGTIFF=IF_SAFER --co COMPRESS=DEFLATE ",
+                    "type": "info"
+                },
+                {
+                    "message": "Completed smoothing to create /var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_dem/dsm.tif in 0:00:03.530444",
+                    "type": "info"
+                },
+                {
+                    "message": "Completed dsm.tif in 0:00:37.934767",
+                    "type": "info"
+                },
+                {
+                    "message": "Cropping /var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_dem/dsm.tif",
+                    "type": "info"
+                },
+                {
+                    "message": "running gdalwarp -cutline /var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_georeferencing/odm_georeferenced_model.bounds.gpkg -crop_to_cutline -co TILED=YES -co COMPRESS=DEFLATE -co BLOCKXSIZE=512 -co BLOCKYSIZE=512 -co BIGTIFF=IF_SAFER -co NUM_THREADS=10  /var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_dem/dsm.original.tif /var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_dem/dsm.tif --config GDAL_CACHEMAX 43.45%",
+                    "type": "info"
+                },
+                {
+                    "message": "Optimizing /var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_dem/dsm.tif as Cloud Optimized GeoTIFF",
+                    "type": "info"
+                },
+                {
+                    "message": "running gdal_translate -of COG -co NUM_THREADS=10 -co BLOCKSIZE=256 -co COMPRESS=DEFLATE -co PREDICTOR=2 -co BIGTIFF=IF_SAFER -co RESAMPLING=NEAREST --config GDAL_CACHEMAX 43.45% --config GDAL_NUM_THREADS 10 \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_dem/dsm.tif\" \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_dem/dsm_cogeo.tif\" ",
+                    "type": "info"
+                },
+                {
+                    "message": "Finished odm_dem stage",
+                    "type": "info"
+                }
+            ]
+        },
+        {
+            "name": "odm_orthophoto",
+            "startTime": "2025-06-29T18:26:30.822356",
+            "messages": [
+                {
+                    "message": "Running odm_orthophoto stage",
+                    "type": "info"
+                },
+                {
+                    "message": "Creating GeoTIFF",
+                    "type": "info"
+                },
+                {
+                    "message": "running \"/code/SuperBuild/install/bin/odm_orthophoto\" -inputFiles /var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_texturing_25d/odm_textured_model_geo.obj -logFile \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_orthophoto/odm_orthophoto_log.txt\" -outputFile \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_orthophoto/odm_orthophoto.tif\" -resolution 50.0 -verbose -outputCornerFile \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_orthophoto/odm_orthophoto_corners.txt\"   -inpaintThreshold 1.0 -utm_north_offset 5444300.0 -utm_east_offset 442710.0 -a_srs \"+proj=utm +zone=32 +datum=WGS84 +units=m +no_defs +type=crs\" -co TILED=YES -co COMPRESS=DEFLATE -co PREDICTOR=2 -co BIGTIFF=IF_SAFER -co BLOCKXSIZE=512 -co BLOCKYSIZE=512 -co NUM_THREADS=10 --config GDAL_CACHEMAX 7288481792.0 ",
+                    "type": "info"
+                },
+                {
+                    "message": "Cropping /var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_orthophoto/odm_orthophoto.tif",
+                    "type": "info"
+                },
+                {
+                    "message": "running gdalwarp -cutline /var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_georeferencing/odm_georeferenced_model.bounds.gpkg -crop_to_cutline -co TILED=YES -co COMPRESS=DEFLATE -co PREDICTOR=2 -co BIGTIFF=IF_SAFER -co BLOCKXSIZE=512 -co BLOCKYSIZE=512 -co NUM_THREADS=10 -dstalpha /var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_orthophoto/odm_orthophoto.original.tif /var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_orthophoto/odm_orthophoto.tif --config GDAL_CACHEMAX 43.45%",
+                    "type": "info"
+                },
+                {
+                    "message": "Optimizing /var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_orthophoto/odm_orthophoto.tif as Cloud Optimized GeoTIFF",
+                    "type": "info"
+                },
+                {
+                    "message": "running gdal_translate -of COG -co NUM_THREADS=10 -co BLOCKSIZE=256 -co COMPRESS=DEFLATE -co PREDICTOR=2 -co BIGTIFF=IF_SAFER -co RESAMPLING=NEAREST --config GDAL_CACHEMAX 43.45% --config GDAL_NUM_THREADS 10 \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_orthophoto/odm_orthophoto.tif\" \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_orthophoto/odm_orthophoto_cogeo.tif\" ",
+                    "type": "info"
+                },
+                {
+                    "message": "Wrote /var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_orthophoto/odm_orthophoto_extent.dxf",
+                    "type": "info"
+                },
+                {
+                    "message": "Wrote /var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_orthophoto/odm_orthophoto.tfw",
+                    "type": "info"
+                },
+                {
+                    "message": "Finished odm_orthophoto stage",
+                    "type": "info"
+                }
+            ]
+        },
+        {
+            "name": "odm_report",
+            "startTime": "2025-06-29T18:26:47.683800",
+            "messages": [
+                {
+                    "message": "Running odm_report stage",
+                    "type": "info"
+                },
+                {
+                    "message": "Exporting shots.geojson",
+                    "type": "info"
+                },
+                {
+                    "message": "Wrote /var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_report/shots.geojson",
+                    "type": "info"
+                },
+                {
+                    "message": "Copied /var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/opensfm/camera_mappings.npz --> /var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_report/camera_mappings.npz",
+                    "type": "info"
+                },
+                {
+                    "message": "running pdal info --dimensions \"X,Y,Z\" \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_georeferencing/odm_georeferenced_model.laz\" > \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_georeferencing/odm_georeferenced_model.info.json\"",
+                    "type": "info"
+                },
+                {
+                    "message": "running pdal translate -i \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_georeferencing/odm_georeferenced_model.laz\" -o \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/opensfm/stats/overlap.tif\" --writer gdal --writers.gdal.resolution=0.12701071428534175 --writers.gdal.data_type=uint8_t --writers.gdal.dimension=UserData --writers.gdal.output_type=max --writers.gdal.radius=0.17962027470902453 ",
+                    "type": "info"
+                },
+                {
+                    "message": "Cropping /var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/opensfm/stats/overlap.tif",
+                    "type": "info"
+                },
+                {
+                    "message": "running gdalwarp -cutline /var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_georeferencing/odm_georeferenced_model.bounds.gpkg -crop_to_cutline -co TILED=YES -co COMPRESS=DEFLATE -co PREDICTOR=2 -co BIGTIFF=IF_SAFER -co BLOCKXSIZE=512 -co BLOCKYSIZE=512 -co NUM_THREADS=10  /var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/opensfm/stats/overlap.original.tif /var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/opensfm/stats/overlap.tif --config GDAL_CACHEMAX 43.45%",
+                    "type": "info"
+                },
+                {
+                    "message": "running gdaldem color-relief \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/opensfm/stats/overlap.tif\" \"/code/opendm/report/overlap_color_map.txt\" \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/opensfm/stats/overlap.png\" -of PNG -alpha",
+                    "type": "info"
+                },
+                {
+                    "message": "running gdal_translate -of png \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_orthophoto/odm_orthophoto.tif\" \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/opensfm/stats/ortho.png\" -b 1 -b 2 -b 3 -b 4 -outsize 1400 0 -co WORLDFILE=YES --config GDAL_CACHEMAX 43.4% ",
+                    "type": "info"
+                },
+                {
+                    "message": "running gdal_translate -outsize 1400 0 \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_dem/dsm.tif\" \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_dem/dsm.preview.tif\" --config GDAL_CACHEMAX 43.45%",
+                    "type": "info"
+                },
+                {
+                    "message": "Computing raster stats for /var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_dem/dsm.preview.tif",
+                    "type": "info"
+                },
+                {
+                    "message": "running gdaldem color-relief \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_dem/dsm.preview.tif\" \"/code/opendm/tiles/color_relief.txt\" \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_dem/dsm.previewcolor.tif\" -alpha -co ALPHA=YES",
+                    "type": "info"
+                },
+                {
+                    "message": "running gdaldem hillshade \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_dem/dsm.preview.tif\" \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_dem/dsm.previewhillshade.tif\" -z 1.0 -s 1.0 -az 315.0 -alt 45.0",
+                    "type": "info"
+                },
+                {
+                    "message": "running \"/usr/bin/python3\" \"/code/opendm/tiles/hsv_merge.py\" \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_dem/dsm.previewcolor.tif\" \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_dem/dsm.previewhillshade.tif\" \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_dem/dsm.previewcolored_hillshade.tif\"",
+                    "type": "info"
+                },
+                {
+                    "message": "running gdal_translate -outsize 1400 0 -of png \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_dem/dsm.previewcolored_hillshade.tif\" \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/opensfm/stats/dsm.png\" --config GDAL_CACHEMAX 43.45%",
+                    "type": "info"
+                },
+                {
+                    "message": "Exporting report to /var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_report/report.pdf",
+                    "type": "info"
+                },
+                {
+                    "message": "Finished odm_report stage",
+                    "type": "info"
+                }
+            ]
+        },
+        {
+            "name": "odm_postprocess",
+            "startTime": "2025-06-29T18:27:41.377205",
+            "messages": [
+                {
+                    "message": "Running odm_postprocess stage",
+                    "type": "info"
+                },
+                {
+                    "message": "Post Processing",
+                    "type": "info"
+                },
+                {
+                    "message": "Adding TIFFTAGs to /var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_orthophoto/odm_orthophoto.tif",
+                    "type": "info"
+                },
+                {
+                    "message": "Adding TIFFTAGs to /var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_dem/dsm.tif",
+                    "type": "info"
+                },
+                {
+                    "message": "Finished odm_postprocess stage",
+                    "type": "info"
+                },
+                {
+                    "message": "No more stages to run",
+                    "type": "info"
+                }
+            ],
+            "endTime": "2025-06-29T18:27:41.382932",
+            "totalTime": 0.01
+        }
+    ],
+    "processes": [
+        {
+            "command": "\"/code/SuperBuild/install/bin/OpenMVS/DensifyPointCloud\" \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/opensfm/undistorted/openmvs/scene.mvs\" --resolution-level 1 --dense-config-file \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/opensfm/undistorted/openmvs/Densify.ini\" --max-resolution 2048 --min-resolution 640 --max-threads 10 --number-views-fuse 2 --sub-resolution-levels 2 --archive-type 3 -w \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/opensfm/undistorted/openmvs/depthmaps\" -v 0 --cuda-device -2",
+            "exitCode": 0,
+            "output": [
+                "Fused depth-maps 387 (98.22%, 1m5s, ETA 1s)...",
+                "Fused depth-maps 389 (98.73%, 1m5s, ETA 843ms)...",
+                "Fused depth-maps 391 (99.24%, 1m5s, ETA 504ms)...",
+                "Fused depth-maps 392 (99.49%, 1m5s, ETA 336ms)...",
+                "Fused depth-maps 394 (100%, 1m5s920ms)",
+                "18:10:35 [App     ] Densifying point-cloud completed: 53468892 points (15m29s353ms)",
+                "18:11:14 [App     ] MEMORYINFO: {",
+                "18:11:14 [App     ] \tVmPeak:\t19678004 kB",
+                "18:11:14 [App     ] \tVmSize:\t18710656 kB",
+                "18:11:14 [App     ] } ENDINFO"
+            ]
+        },
+        {
+            "command": "\"/code/SuperBuild/install/bin/OpenMVS/DensifyPointCloud\" --filter-point-cloud -20 -i \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/opensfm/undistorted/openmvs/scene_dense.mvs\" -v 0 --cuda-device -2",
+            "exitCode": 0,
+            "output": [
+                "Point visibility checks 53452097 (99.97%, 2m39s, ETA 50ms)...",
+                "Point visibility checks 53455736 (99.98%, 2m39s, ETA 39ms)...",
+                "Point visibility checks 53459288 (99.98%, 2m39s, ETA 28ms)...",
+                "Point visibility checks 53463322 (99.99%, 2m39s, ETA 16ms)...",
+                "Point visibility checks 53467548 (100.00%, 2m39s, ETA 4ms)...",
+                "Point visibility checks 53468892 (100%, 2m39s935ms)",
+                "18:14:53 [App     ] MEMORYINFO: {",
+                "18:14:53 [App     ] \tVmPeak:\t12231144 kB",
+                "18:14:53 [App     ] \tVmSize:\t 7413116 kB",
+                "18:14:53 [App     ] } ENDINFO"
+            ]
+        },
+        {
+            "command": "\"/code/SuperBuild/install/bin/FPCFilter\" --input \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/opensfm/undistorted/openmvs/scene_dense_dense_filtered.ply\" --output \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_filterpoints/point_cloud.ply\" --concurrency 10 --meank 16 --std 5 --stats \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_filterpoints/point_cloud_stats.json\" --boundary \"/tmp/tmptvfeane1.boundary.json\"",
+            "exitCode": 0,
+            "output": [
+                "-> Spacing estimation completed (0.02 meters)",
+                "",
+                "?> Done in 36.35s",
+                "",
+                "-> Writing output",
+                "",
+                "?> Done in 5.84s",
+                "",
+                "?> Pipeline done in 53.1s",
+                ""
+            ]
+        },
+        {
+            "command": "\"/code/SuperBuild/install/bin/PoissonRecon\" --in \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_filterpoints/point_cloud.ply\" --out \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_meshing/odm_mesh.dirty.ply\" --depth 11 --pointWeight 4.0 --samplesPerNode 1.0 --threads 9 --bType 2 --linearFit ",
+            "exitCode": 0
+        },
+        {
+            "command": "\"/code/SuperBuild/install/bin/OpenMVS/ReconstructMesh\" -i \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_meshing/odm_mesh.dirty.ply\" -o \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_meshing/odm_mesh.ply\" --archive-type 3 --remove-spikes 0 --remove-spurious 20 --smooth 0 --target-face-num 400000 -v 0",
+            "exitCode": 0,
+            "output": [
+                "Decimated faces 11294797 (99.34%, 1m30s, ETA 600ms)...",
+                "Decimated faces 11311305 (99.48%, 1m30s, ETA 468ms)...",
+                "Decimated faces 11326367 (99.62%, 1m30s, ETA 348ms)...",
+                "Decimated faces 11340550 (99.74%, 1m30s, ETA 235ms)...",
+                "Decimated faces 11356397 (99.88%, 1m30s, ETA 109ms)...",
+                "Decimated faces 11370112 (100%, 1m30s541ms)",
+                "18:19:07 [App     ] MEMORYINFO: {",
+                "18:19:07 [App     ] \tVmPeak:\t 5755432 kB",
+                "18:19:07 [App     ] \tVmSize:\t 2011408 kB",
+                "18:19:07 [App     ] } ENDINFO"
+            ]
+        },
+        {
+            "command": "renderdem \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_filterpoints/point_cloud.ply\" --outdir \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_meshing/tmp\" --output-type max --radiuses 0.031415926535897934,0.04442882938158367,0.06283185307179588 --resolution 0.02 --max-tiles 0 --decimation 1 --classification -1 --tile-size 4096 --force ",
+            "exitCode": 0,
+            "output": [
+                "r0.0444288_x0_y1.tif",
+                "r0.0314159_x0_y0.tif",
+                "r0.0444288_x0_y2.tif",
+                "r0.0314159_x1_y1.tif",
+                "r0.0628319_x1_y1.tif",
+                "r0.0628319_x0_y0.tif",
+                "r0.0444288_x1_y2.tif",
+                "r0.0628319_x1_y0.tif",
+                "r0.0444288_x0_y0.tif",
+                "r0.0628319_x0_y1.tif"
+            ]
+        },
+        {
+            "command": "gdalbuildvrt -input_file_list \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_meshing/tmp/tiles_list.txt\" \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_meshing/tmp/tiles.vrt\" ",
+            "exitCode": 0,
+            "output": [
+                "0...10...20...30...40...50...60...70...80...90...100 - done."
+            ]
+        },
+        {
+            "command": "gdal_translate -co NUM_THREADS=10 -co BIGTIFF=IF_SAFER -co COMPRESS=DEFLATE --config GDAL_CACHEMAX 44.0% -outsize 10% 0 \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_meshing/tmp/tiles.vrt\" \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_meshing/tmp/tiles.small.tif\"",
+            "exitCode": 0,
+            "output": [
+                "Input file size is 7713, 8891",
+                "0...10...20...30...40...50...60...70...80...90...100 - done."
+            ]
+        },
+        {
+            "command": "gdalbuildvrt -resolution highest -r bilinear \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_meshing/tmp/merged.vrt\" \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_meshing/tmp/tiles.small_filled.tif\" \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_meshing/tmp/tiles.vrt\"",
+            "exitCode": 0,
+            "output": [
+                "0...10...20...30...40...50...60...70...80...90...100 - done."
+            ]
+        },
+        {
+            "command": "gdal_translate -co NUM_THREADS=10 -co TILED=YES -co BIGTIFF=IF_SAFER -co COMPRESS=DEFLATE --config GDAL_CACHEMAX 44.0% \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_meshing/tmp/merged.vrt\" \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_meshing/tmp/tiles.tif\"",
+            "exitCode": 0,
+            "output": [
+                "Input file size is 7713, 8891",
+                "0...10...20...30...40...50...60...70...80...90...100 - done."
+            ]
+        },
+        {
+            "command": "fastrasterfilter \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_meshing/tmp/tiles.tif\" --output \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_meshing/tmp/mesh_dsm.tif\" --window-size 512 --radius 4 --co TILED=YES --co BIGTIFF=IF_SAFER --co COMPRESS=DEFLATE ",
+            "exitCode": 0,
+            "output": [
+                "Input: /var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_meshing/tmp/tiles.tif",
+                "Size: 7713x8891",
+                "Blocks: 255",
+                "Smoothing...255... done",
+                "Wrote /var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_meshing/tmp/mesh_dsm.tif"
+            ]
+        },
+        {
+            "command": "\"/code/SuperBuild/install/bin/dem2mesh\" -inputFile \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_meshing/tmp/mesh_dsm.tif\" -outputFile \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_meshing/odm_25dmesh.dirty.ply\" -maxTileLength 2000 -maxVertexCount 200000 -maxConcurrency 10 -edgeSwapThreshold 0.15 -verbose ",
+            "exitCode": 0,
+            "output": [
+                "Reading /var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_meshing/odm_25dmesh.dirty.ply.3-2.bin",
+                "Reading /var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_meshing/odm_25dmesh.dirty.ply.3-3.bin",
+                "Reading /var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_meshing/odm_25dmesh.dirty.ply.3-4.bin",
+                "Reading /var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_meshing/odm_25dmesh.dirty.ply.3-5.bin",
+                "Reading /var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_meshing/odm_25dmesh.dirty.ply.3-6.bin",
+                "Reading /var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_meshing/odm_25dmesh.dirty.ply.3-7.bin",
+                "Simplifying final mesh...",
+                "Triangle count: 400000",
+                "Performing edge collapses...",
+                "Writing to file...  done!"
+            ]
+        },
+        {
+            "command": "\"/code/SuperBuild/install/bin/OpenMVS/ReconstructMesh\" -i \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_meshing/odm_25dmesh.dirty.ply\" -o \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_meshing/odm_25dmesh.ply\" --archive-type 3 --remove-spikes 0 --remove-spurious 0 --smooth 0 --target-face-num 400000 -v 0",
+            "exitCode": 0,
+            "output": [
+                "18:20:02 [App     ] CPU: AMD Ryzen 7 7800X3D 8-Core Processor            (10 cores)",
+                "18:20:02 [App     ] RAM: 15.62GB Physical Memory 4.00GB Virtual Memory",
+                "18:20:02 [App     ] OS: Linux 6.6.87.2-microsoft-standard-WSL2 (x86_64)",
+                "18:20:02 [App     ] Disk:",
+                "18:20:02 [App     ] SSE & AVX compatible CPU & OS detected",
+                "18:20:02 [App     ] Command line: ReconstructMesh -i /var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_meshing/odm_25dmesh.dirty.ply -o /var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_meshing/odm_25dmesh.ply --archive-type 3 --remove-spikes 0 --remove-spurious 0 --smooth 0 --target-face-num 400000 -v 0",
+                "18:20:04 [App     ] MEMORYINFO: {",
+                "18:20:04 [App     ] \tVmPeak:\t  164376 kB",
+                "18:20:04 [App     ] \tVmSize:\t  126196 kB",
+                "18:20:04 [App     ] } ENDINFO"
+            ]
+        },
+        {
+            "command": "\"/code/SuperBuild/install/bin/texrecon\" \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/opensfm/undistorted/reconstruction.nvm\" \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_meshing/odm_mesh.ply\" \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_texturing/odm_textured_model_geo\" -d gmi -o gauss_clamping -t none --no_intermediate_results     --max_texture_size=8192 ",
+            "exitCode": 0,
+            "output": [
+                "",
+                "Blending texture patches 100%... done. (Took 33.689s)",
+                "Generating texture atlases:",
+                "Sorting texture patches... done.",
+                "",
+                "Working on atlas 67 100%... done.",
+                "Finalizing texture atlases... done. (Took: 0s)",
+                "Building objmodel:",
+                "Saving model... done.",
+                "Whole texturing procedure took: 122.499s"
+            ]
+        },
+        {
+            "command": "draco_transcoder -i \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_texturing/odm_textured_model_geo.glb\" -o \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_texturing/odm_textured_model_geo_compressed.glb\" -qt 16 -qp 16",
+            "exitCode": 0,
+            "output": [
+                "Transcode\t/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_texturing/odm_textured_model_geo.glb\t3630"
+            ]
+        },
+        {
+            "command": "\"/code/SuperBuild/install/bin/texrecon\" \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/opensfm/undistorted/reconstruction.nvm\" \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_meshing/odm_25dmesh.ply\" \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_texturing_25d/odm_textured_model_geo\" -d gmi -o gauss_clamping -t none --no_intermediate_results   --nadir_mode  --max_texture_size=8192 ",
+            "exitCode": 0,
+            "output": [
+                "",
+                "Blending texture patches 100%... done. (Took 8.245s)",
+                "Generating texture atlases:",
+                "Sorting texture patches... done.",
+                "",
+                "Working on atlas 10 100%... done.",
+                "Finalizing texture atlases... done. (Took: 0s)",
+                "Building objmodel:",
+                "Saving model... done.",
+                "Whole texturing procedure took: 57.548s"
+            ]
+        },
+        {
+            "command": "pdal translate -i \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_filterpoints/point_cloud.ply\" -o \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_georeferencing/odm_georeferenced_model.laz\" ferry transformation --filters.ferry.dimensions=\"views => UserData\" --filters.transformation.matrix=\"1 0 0 442710.0 0 1 0 5444300.0 0 0 1 0 0 0 0 1\" --writers.las.offset_x=442710.0 --writers.las.offset_y=5444300.0 --writers.las.scale_x=0.001 --writers.las.scale_y=0.001 --writers.las.scale_z=0.001 --writers.las.offset_z=0 --writers.las.a_srs=\"+proj=utm +zone=32 +datum=WGS84 +units=m +no_defs +type=crs\"",
+            "exitCode": 0
+        },
+        {
+            "command": "pdal translate -i \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_georeferencing/odm_georeferenced_model.laz\" -o \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_georeferencing/odm_georeferenced_model.decimated.las\" decimation --filters.decimation.step=40 ",
+            "exitCode": 0
+        },
+        {
+            "command": "pdal info --boundary --filters.hexbin.edge_size=1 --filters.hexbin.threshold=0 \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_georeferencing/odm_georeferenced_model.decimated.las\" > \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_georeferencing/odm_georeferenced_model.boundary.json\"",
+            "exitCode": 0
+        },
+        {
+            "command": "pdal info --summary \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_georeferencing/odm_georeferenced_model.laz\" > \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_georeferencing/odm_georeferenced_model.summary.json\"",
+            "exitCode": 0
+        },
+        {
+            "command": "ogr2ogr -overwrite -f GPKG -a_srs \"+proj=utm +zone=32 +datum=WGS84 +units=m +no_defs\" /var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_georeferencing/odm_georeferenced_model.bounds.gpkg /var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_georeferencing/odm_georeferenced_model.bounds.geojson",
+            "exitCode": 0
+        },
+        {
+            "command": "entwine build --threads 10 --tmp \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/entwine_pointcloud-tmp\" -i /var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_georeferencing/odm_georeferenced_model.laz -o \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/entwine_pointcloud\" ",
+            "exitCode": 0,
+            "output": [
+                "00:20 - 39% - 20,004,864 - 3,600 (3,366) M/h - 0W - 0R - 477A",
+                "00:30 - 55% - 28,045,312 - 3,365 (2,894) M/h - 57W - 52R - 638A",
+                "00:40 - 68% - 35,045,376 - 3,154 (2,520) M/h - 203W - 121R - 737A",
+                "00:50 - 78% - 39,919,616 - 2,874 (1,754) M/h - 270W - 213R - 812A",
+                "01:00 - 85% - 43,782,144 - 2,626 (1,390) M/h - 310W - 237R - 831A",
+                "01:10 - 91% - 46,813,184 - 2,407 (1,091) M/h - 418W - 239R - 738A",
+                "01:20 - 98% - 50,548,736 - 2,274 (1,344) M/h - 280W - 239R - 792A",
+                "Done 0",
+                "Saving",
+                "Wrote 51,331,394 points."
+            ]
+        },
+        {
+            "command": "renderdem \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_georeferencing/odm_georeferenced_model.laz\" --outdir \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_dem\" --output-type max --radiuses 0.02,0.028284271247461905,0.04000000000000001 --resolution 0.02 --max-tiles 0 --decimation 1 --classification -1 --tile-size 4096 --force ",
+            "exitCode": 0,
+            "output": [
+                "r0.02_x0_y2.tif",
+                "r0.04_x1_y1.tif",
+                "r0.02_x0_y0.tif",
+                "r0.04_x0_y0.tif",
+                "r0.0282843_x0_y2.tif",
+                "r0.02_x1_y1.tif",
+                "r0.0282843_x1_y2.tif",
+                "r0.04_x1_y0.tif",
+                "r0.0282843_x0_y0.tif",
+                "r0.04_x0_y1.tif"
+            ]
+        },
+        {
+            "command": "gdalbuildvrt -input_file_list \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_dem/tiles_list.txt\" \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_dem/tiles.vrt\" ",
+            "exitCode": 0,
+            "output": [
+                "0...10...20...30...40...50...60...70...80...90...100 - done."
+            ]
+        },
+        {
+            "command": "gdal_translate -co NUM_THREADS=10 -co BIGTIFF=IF_SAFER -co COMPRESS=DEFLATE --config GDAL_CACHEMAX 43.45% -outsize 10% 0 \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_dem/tiles.vrt\" \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_dem/tiles.small.tif\"",
+            "exitCode": 0,
+            "output": [
+                "Input file size is 7713, 8891",
+                "0...10...20...30...40...50...60...70...80...90...100 - done."
+            ]
+        },
+        {
+            "command": "gdalbuildvrt -resolution highest -r bilinear \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_dem/merged.vrt\" \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_dem/tiles.small_filled.tif\" \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_dem/tiles.vrt\"",
+            "exitCode": 0,
+            "output": [
+                "0...10...20...30...40...50...60...70...80...90...100 - done."
+            ]
+        },
+        {
+            "command": "gdal_translate -co NUM_THREADS=10 -co TILED=YES -co BIGTIFF=IF_SAFER -co COMPRESS=DEFLATE --config GDAL_CACHEMAX 43.45% \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_dem/merged.vrt\" \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_dem/tiles.tif\"",
+            "exitCode": 0,
+            "output": [
+                "Input file size is 7713, 8891",
+                "0...10...20...30...40...50...60...70...80...90...100 - done."
+            ]
+        },
+        {
+            "command": "fastrasterfilter \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_dem/tiles.tif\" --output \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_dem/dsm.tif\" --window-size 512 --radius 4 --co TILED=YES --co BIGTIFF=IF_SAFER --co COMPRESS=DEFLATE ",
+            "exitCode": 0,
+            "output": [
+                "Input: /var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_dem/tiles.tif",
+                "Size: 7713x8891",
+                "Blocks: 255",
+                "Smoothing...255... done",
+                "Wrote /var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_dem/dsm.tif"
+            ]
+        },
+        {
+            "command": "gdalwarp -cutline /var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_georeferencing/odm_georeferenced_model.bounds.gpkg -crop_to_cutline -co TILED=YES -co COMPRESS=DEFLATE -co BLOCKXSIZE=512 -co BLOCKYSIZE=512 -co BIGTIFF=IF_SAFER -co NUM_THREADS=10  /var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_dem/dsm.original.tif /var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_dem/dsm.tif --config GDAL_CACHEMAX 43.45%",
+            "exitCode": 0,
+            "output": [
+                "Creating output file that is 7504P x 8675L.",
+                "Processing /var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_dem/dsm.original.tif [1/1] : 0Using internal nodata values (e.g. -9999) for image /var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_dem/dsm.original.tif.",
+                "Copying nodata values from source /var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_dem/dsm.original.tif to destination /var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_dem/dsm.tif.",
+                "...10...20...30...40...50...60...70...80...90...100 - done."
+            ]
+        },
+        {
+            "command": "gdal_translate -of COG -co NUM_THREADS=10 -co BLOCKSIZE=256 -co COMPRESS=DEFLATE -co PREDICTOR=2 -co BIGTIFF=IF_SAFER -co RESAMPLING=NEAREST --config GDAL_CACHEMAX 43.45% --config GDAL_NUM_THREADS 10 \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_dem/dsm.tif\" \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_dem/dsm_cogeo.tif\" ",
+            "exitCode": 0,
+            "output": [
+                "Input file size is 7504, 8675",
+                "0...10...20...30...40...50...60...70...80...90...100 - done."
+            ]
+        },
+        {
+            "command": "\"/code/SuperBuild/install/bin/odm_orthophoto\" -inputFiles /var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_texturing_25d/odm_textured_model_geo.obj -logFile \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_orthophoto/odm_orthophoto_log.txt\" -outputFile \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_orthophoto/odm_orthophoto.tif\" -resolution 50.0 -verbose -outputCornerFile \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_orthophoto/odm_orthophoto_corners.txt\"   -inpaintThreshold 1.0 -utm_north_offset 5444300.0 -utm_east_offset 442710.0 -a_srs \"+proj=utm +zone=32 +datum=WGS84 +units=m +no_defs +type=crs\" -co TILED=YES -co COMPRESS=DEFLATE -co PREDICTOR=2 -co BIGTIFF=IF_SAFER -co BLOCKXSIZE=512 -co BLOCKYSIZE=512 -co NUM_THREADS=10 --config GDAL_CACHEMAX 7288481792.0 ",
+            "exitCode": 0,
+            "output": [
+                "Set GDAL_CACHEMAX to 7288481792",
+                "Set TILED=YES",
+                "Set COMPRESS=DEFLATE",
+                "Set PREDICTOR=2",
+                "Set BIGTIFF=IF_SAFER",
+                "Set BLOCKXSIZE=512",
+                "Set BLOCKYSIZE=512",
+                "Set NUM_THREADS=10",
+                "Writing corner coordinates to /var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_orthophoto/odm_orthophoto_corners.txt",
+                "Orthophoto generation done."
+            ]
+        },
+        {
+            "command": "gdalwarp -cutline /var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_georeferencing/odm_georeferenced_model.bounds.gpkg -crop_to_cutline -co TILED=YES -co COMPRESS=DEFLATE -co PREDICTOR=2 -co BIGTIFF=IF_SAFER -co BLOCKXSIZE=512 -co BLOCKYSIZE=512 -co NUM_THREADS=10 -dstalpha /var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_orthophoto/odm_orthophoto.original.tif /var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_orthophoto/odm_orthophoto.tif --config GDAL_CACHEMAX 43.45%",
+            "exitCode": 0,
+            "output": [
+                "Using band 4 of source image as alpha.",
+                "Creating output file that is 7505P x 8676L.",
+                "Processing /var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_orthophoto/odm_orthophoto.original.tif [1/1] : 0...10...20...30...40...50...60...70...80...90...100 - done."
+            ]
+        },
+        {
+            "command": "gdal_translate -of COG -co NUM_THREADS=10 -co BLOCKSIZE=256 -co COMPRESS=DEFLATE -co PREDICTOR=2 -co BIGTIFF=IF_SAFER -co RESAMPLING=NEAREST --config GDAL_CACHEMAX 43.45% --config GDAL_NUM_THREADS 10 \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_orthophoto/odm_orthophoto.tif\" \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_orthophoto/odm_orthophoto_cogeo.tif\" ",
+            "exitCode": 0,
+            "output": [
+                "Input file size is 7505, 8676",
+                "0...10...20...30...40...50...60...70...80...90...100 - done."
+            ]
+        },
+        {
+            "command": "pdal info --dimensions \"X,Y,Z\" \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_georeferencing/odm_georeferenced_model.laz\" > \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_georeferencing/odm_georeferenced_model.info.json\"",
+            "exitCode": 0
+        },
+        {
+            "command": "pdal translate -i \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_georeferencing/odm_georeferenced_model.laz\" -o \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/opensfm/stats/overlap.tif\" --writer gdal --writers.gdal.resolution=0.12701071428534175 --writers.gdal.data_type=uint8_t --writers.gdal.dimension=UserData --writers.gdal.output_type=max --writers.gdal.radius=0.17962027470902453 ",
+            "exitCode": 0
+        },
+        {
+            "command": "gdalwarp -cutline /var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_georeferencing/odm_georeferenced_model.bounds.gpkg -crop_to_cutline -co TILED=YES -co COMPRESS=DEFLATE -co PREDICTOR=2 -co BIGTIFF=IF_SAFER -co BLOCKXSIZE=512 -co BLOCKYSIZE=512 -co NUM_THREADS=10  /var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/opensfm/stats/overlap.original.tif /var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/opensfm/stats/overlap.tif --config GDAL_CACHEMAX 43.45%",
+            "exitCode": 0,
+            "output": [
+                "Creating output file that is 1181P x 1365L.",
+                "Processing /var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/opensfm/stats/overlap.original.tif [1/1] : 0Using internal nodata values (e.g. 255) for image /var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/opensfm/stats/overlap.original.tif.",
+                "Copying nodata values from source /var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/opensfm/stats/overlap.original.tif to destination /var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/opensfm/stats/overlap.tif.",
+                "...10...20...30...40...50...60...70...80...90...100 - done."
+            ]
+        },
+        {
+            "command": "gdaldem color-relief \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/opensfm/stats/overlap.tif\" \"/code/opendm/report/overlap_color_map.txt\" \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/opensfm/stats/overlap.png\" -of PNG -alpha",
+            "exitCode": 0,
+            "output": [
+                "0...10...20...30...40...50...60...70...80...90...100 - done."
+            ]
+        },
+        {
+            "command": "gdal_translate -of png \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_orthophoto/odm_orthophoto.tif\" \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/opensfm/stats/ortho.png\" -b 1 -b 2 -b 3 -b 4 -outsize 1400 0 -co WORLDFILE=YES --config GDAL_CACHEMAX 43.4% ",
+            "exitCode": 0,
+            "output": [
+                "Input file size is 7505, 8676",
+                "0...10...20...30...40...50...60...70...80...90...100 - done."
+            ]
+        },
+        {
+            "command": "gdal_translate -outsize 1400 0 \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_dem/dsm.tif\" \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_dem/dsm.preview.tif\" --config GDAL_CACHEMAX 43.45%",
+            "exitCode": 0,
+            "output": [
+                "Input file size is 7504, 8675",
+                "0...10...20...30...40...50...60...70...80...90...100 - done."
+            ]
+        },
+        {
+            "command": "gdaldem color-relief \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_dem/dsm.preview.tif\" \"/code/opendm/tiles/color_relief.txt\" \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_dem/dsm.previewcolor.tif\" -alpha -co ALPHA=YES",
+            "exitCode": 0,
+            "output": [
+                "0...10...20...30...40...50...60...70...80...90...100 - done."
+            ]
+        },
+        {
+            "command": "gdaldem hillshade \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_dem/dsm.preview.tif\" \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_dem/dsm.previewhillshade.tif\" -z 1.0 -s 1.0 -az 315.0 -alt 45.0",
+            "exitCode": 0,
+            "output": [
+                "0...10...20...30...40...50...60...70...80...90...100 - done."
+            ]
+        },
+        {
+            "command": "\"/usr/bin/python3\" \"/code/opendm/tiles/hsv_merge.py\" \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_dem/dsm.previewcolor.tif\" \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_dem/dsm.previewhillshade.tif\" \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_dem/dsm.previewcolored_hillshade.tif\"",
+            "exitCode": 0,
+            "output": [
+                "0...10...20...30...40...50...60...70...80...90...100 - done."
+            ]
+        },
+        {
+            "command": "gdal_translate -outsize 1400 0 -of png \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/odm_dem/dsm.previewcolored_hillshade.tif\" \"/var/www/data/afa41b35-76a5-4ac9-a887-08c69215fae4/opensfm/stats/dsm.png\" --config GDAL_CACHEMAX 43.45%",
+            "exitCode": 0,
+            "output": [
+                "Input file size is 1400, 1618",
+                "0...10...20...30...40...50...60...70...80...90...100 - done."
+            ]
+        }
+    ],
+    "success": true,
+    "endTime": "2025-06-29T18:27:41.382932",
+    "totalTime": 1958.18
+}
