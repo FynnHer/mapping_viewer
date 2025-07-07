@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>WebODM Ansichten</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 24px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+        .frame-section {
+            margin-bottom: 40px;
+        }
+        .frame-label {
+            margin-bottom: 12px;
+            font-size: 1.15em;
+            font-weight: bold;
+            color: #264653;
+        }
+        iframe {
+            display: block;
+            width: 100%;
+            max-width: 700px;
+            height: 360px;
+            margin: 0 auto;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            background: #eee;
+        }
+        @media (max-width: 750px) {
+            .container {
+                padding: 8px;
+            }
+            iframe {
+                max-width: 100%;
+                height: 220px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>WebODM Ansichten</h1>
+        <div class="frame-section">
+            <div class="frame-label">Orthofoto Karte</div>
+            <iframe scrolling="no" title="WebODM Orthofoto" frameborder="0" src="https://cloud1.webodm.net/public/task/243c8a1d-f673-4a04-82ed-5902602c4a55/iframe/map/?t=orthophoto"></iframe>
+        </div>
+        <div class="frame-section">
+            <div class="frame-label">3D Ansicht</div>
+            <iframe scrolling="no" title="WebODM 3D" frameborder="0" src="https://cloud1.webodm.net/public/task/243c8a1d-f673-4a04-82ed-5902602c4a55/iframe/3d/"></iframe>
+        </div>
+    </div>
+</body>
+</html>
