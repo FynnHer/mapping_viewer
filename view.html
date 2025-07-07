@@ -32,6 +32,24 @@
             font-weight: bold;
             color: #264653;
         }
+        .fullscreen-btn {
+            display: inline-block;
+            margin-bottom: 10px;
+            background: #2196f3;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            padding: 8px 18px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background 0.18s;
+        }
+        .fullscreen-btn:hover {
+            background: #1769aa;
+        }
+        .iframe-wrapper {
+            position: relative;
+        }
         iframe {
             display: block;
             width: 100%;
@@ -51,6 +69,15 @@
                 height: 220px;
             }
         }
+        /* Optional: Fullscreen styles when in fullscreen mode */
+        .fullscreen-iframe {
+            width: 100vw !important;
+            height: 100vh !important;
+            max-width: none !important;
+            border-radius: 0 !important;
+            border: none !important;
+            background: #000;
+        }
     </style>
 </head>
 <body>
@@ -58,12 +85,51 @@
         <h1>WebODM Ansichten</h1>
         <div class="frame-section">
             <div class="frame-label">Orthofoto Karte</div>
-            <iframe scrolling="no" title="WebODM Orthofoto" frameborder="0" src="https://cloud1.webodm.net/public/task/243c8a1d-f673-4a04-82ed-5902602c4a55/iframe/map/?t=orthophoto"></iframe>
+            <div class="iframe-wrapper" id="wrapper-ortho">
+                <button class="fullscreen-btn" onclick="goFullscreen('ortho-iframe', 'wrapper-ortho')">Vollbild</button>
+                <iframe id="ortho-iframe" scrolling="no" title="WebODM Orthofoto" frameborder="0" src="https://cloud1.webodm.net/public/task/243c8a1d-f673-4a04-82ed-5902602c4a55/iframe/map/?t=orthophoto"></iframe>
+            </div>
         </div>
         <div class="frame-section">
             <div class="frame-label">3D Ansicht</div>
-            <iframe scrolling="no" title="WebODM 3D" frameborder="0" src="https://cloud1.webodm.net/public/task/243c8a1d-f673-4a04-82ed-5902602c4a55/iframe/3d/"></iframe>
+            <div class="iframe-wrapper" id="wrapper-3d">
+                <button class="fullscreen-btn" onclick="goFullscreen('3d-iframe', 'wrapper-3d')">Vollbild</button>
+                <iframe id="3d-iframe" scrolling="no" title="WebODM 3D" frameborder="0" src="https://cloud1.webodm.net/public/task/243c8a1d-f673-4a04-82ed-5902602c4a55/iframe/3d/"></iframe>
+            </div>
         </div>
     </div>
+    <script>
+        function goFullscreen(iframeId, wrapperId) {
+            var iframe = document.getElementById(iframeId);
+            var wrapper = document.getElementById(wrapperId);
+            // Use the wrapper to request fullscreen so we can style the iframe
+            if (wrapper.requestFullscreen) {
+                wrapper.requestFullscreen();
+            } else if (wrapper.webkitRequestFullscreen) { // Safari
+                wrapper.webkitRequestFullscreen();
+            } else if (wrapper.msRequestFullscreen) { // IE11
+                wrapper.msRequestFullscreen();
+            }
+        }
+
+        // Add/remove fullscreen-specific class on iframe for better styling
+        document.addEventListener('fullscreenchange', handleFsChange);
+        document.addEventListener('webkitfullscreenchange', handleFsChange);
+        document.addEventListener('msfullscreenchange', handleFsChange);
+
+        function handleFsChange() {
+            var wrappers = [document.getElementById('wrapper-ortho'), document.getElementById('wrapper-3d')];
+            wrappers.forEach(function(wrapper) {
+                var iframe = wrapper.querySelector('iframe');
+                if (document.fullscreenElement === wrapper ||
+                    document.webkitFullscreenElement === wrapper ||
+                    document.msFullscreenElement === wrapper) {
+                    iframe.classList.add('fullscreen-iframe');
+                } else {
+                    iframe.classList.remove('fullscreen-iframe');
+                }
+            });
+        }
+    </script>
 </body>
 </html>
